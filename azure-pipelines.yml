@@ -8,8 +8,7 @@ steps:
   inputs:
     command: 'publish'
     publishWebProjects: true
-pool: 
-name: default
+pool: default
 - task: AzureWebApp@1
   inputs:
     azureSubscription: 'dotnet-calc'
