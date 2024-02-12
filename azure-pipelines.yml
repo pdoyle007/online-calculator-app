@@ -10,7 +10,6 @@ steps:
     publishWebProjects: true
 pool: 
 name: default
-appendCommitMessageToRunName:test
 - task: AzureWebApp@1
   inputs:
     azureSubscription: 'dotnet-calc'
