@@ -8,11 +8,11 @@ trigger:
 
 pool: default
 
-steps:
-- script: echo Hello, world!
-  displayName: 'Run a one-line script'
-
-- script: |
-    echo Add other tasks to build, test, and deploy your project.
-    echo See https://aka.ms/yaml
-  displayName: 'Run a multi-line script'
+- task: WindowsMachineFileCopy@2
+  inputs:
+    SourcePath: 'c:\copysource'
+    MachineNames: '51.143.221.4'
+    AdminUserName: 'newadmin'
+    AdminPassword: 'My 1 dog is Buddy'
+    TargetPath: 'C:\copydest'
+    CleanTargetBeforeCopy: true
