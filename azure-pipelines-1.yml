@@ -9,11 +9,11 @@ trigger:
 pool: default
 
 steps:
-- task: WindowsMachineFileCopy@2
+- 
+- task: AzureFileCopy@5
   inputs:
-    SourcePath: 'c:\copysource'
-    MachineNames: '51.143.221.4'
-    AdminUserName: 'newadmin'
-    AdminPassword: 'My 1 dog is Buddy'
-    TargetPath: 'C:\copydest'
-    CleanTargetBeforeCopy: true
+    SourcePath: 'c:\copytest\'
+    azureSubscription: 'dotnet-calc'
+    Destination: 'AzureBlob'
+    storage: 'copyteststo'
+    ContainerName: 'copytest'
