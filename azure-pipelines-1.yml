@@ -11,6 +11,6 @@ pool: default
 steps:
 - task: CopyFiles@2
   inputs:
-    SourceFolder: 'c:\temp\temps1'
+    SourceFolder: 'c:\temps2'
     Contents: '**'
-    TargetFolder: 'c:\temps2'
+    TargetFolder: 'c:\temps3'
