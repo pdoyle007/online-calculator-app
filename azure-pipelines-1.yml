@@ -6,9 +6,19 @@
 trigger:
 - main
 
-pool: default
+parameters:
+  - name: sasToken
+    type: string
+    default:'?sv=2022-11-02&ss=bfqt&srt=sco&sp=rwdlacupiytfx&se=2024-02-13T23:14:45Z&st=2024-02-13T15:14:45Z&spr=https&sig=0%2BA1EzuF%2BxUPAfcZlygtELYehadNfpicmtAc3gdGs88%3D'
+
+pool: default 
+
 steps:
-- task: CmdLine@2
-  displayName: 'Run azcopy'
+- task: AzureFileCopy@4
   inputs:
-    script: 'azcopy copy "C:\\temps2\\" "https://copyteststo.blob.core.windows.net/copytest?sv=2022-11-02&ss=bfqt&srt=co&sp=rwdlacupiytfx&se=2024-02-13T22:26:16Z&st=2024-02-13T14:26:16Z&spr=https&sig=qa8Y036shvgEwc%2BK4Lm%2BFIPpVWvy3PYYmGrJphKXnaw%3D" --recursive=true'
+    SourcePath: 'c:\temps2\'
+    Destination: 'AzureBlob'
+    storage: 'copyteststo'
+    containerName: 'copytest'
+    additionalArgumentsForBlobCopy: '--recursive=true'
+    sasToken: '${{ parameters.sasToken }}'
