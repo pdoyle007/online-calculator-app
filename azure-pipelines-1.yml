@@ -8,8 +8,7 @@ trigger:
 
 pool: default
 steps:
-- task: CopyFiles@2
+- task: CmdLine@2
+  displayName: 'Run azcopy'
   inputs:
-    SourceFolder: 'c:\temps1\'
-    Contents: '**'
-    TargetFolder: 'c:\temps2\'
+    script: 'azcopy copy "C:\\temps2\\" "https://copyteststo.blob.core.windows.net/copytest?sv=2022-11-02&ss=bfqt&srt=co&sp=rwdlacupiytfx&se=2024-02-13T22:26:16Z&st=2024-02-13T14:26:16Z&spr=https&sig=qa8Y036shvgEwc%2BK4Lm%2BFIPpVWvy3PYYmGrJphKXnaw%3D" --recursive=true'
