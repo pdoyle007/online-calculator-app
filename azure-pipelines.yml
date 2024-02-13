@@ -1,5 +1,12 @@
 variables:
   buildConfiguration: 'Release'
+
+stages:
+- stage: Deploy
+  pool: 
+   name: local
+   demands:
+    - agent.name -equals local
  
 steps:
 - script: dotnet build --configuration $(buildConfiguration)
