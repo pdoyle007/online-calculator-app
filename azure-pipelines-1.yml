@@ -7,11 +7,9 @@ trigger:
 - main
 
 pool: default
-
 steps:
-- 
-- task: AzureFileCopy@5
-  inputs:
+  - task: AzureFileCopy@5
+    inputs:
     SourcePath: 'c:\copytest\'
     azureSubscription: 'dotnet-calc'
     Destination: 'AzureBlob'
