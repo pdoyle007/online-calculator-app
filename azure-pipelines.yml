@@ -1,8 +1,5 @@
 variables:
   buildConfiguration: 'Release'
-
-trigger:
-pool: default
  
 steps:
 - script: dotnet build --configuration $(buildConfiguration)
