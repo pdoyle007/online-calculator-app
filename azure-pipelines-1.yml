@@ -8,10 +8,8 @@ trigger:
 
 pool: default
 steps:
-- task: AzureFileCopy@5
+- task: CopyFiles@2
   inputs:
-    SourcePath: 'c:\temps1'
-    azureSubscription: 'dotnet-calc'
-    Destination: 'AzureBlob'
-    storage: 'copyteststo'
-    ContainerName: '/copytest'
+    SourceFolder: 'c:\temps1\'
+    Contents: '**'
+    TargetFolder: 'c:\temps2\'
