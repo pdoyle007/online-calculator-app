@@ -9,9 +9,8 @@ trigger:
 pool: default 
 
 steps:
-- 
 - task: CopyFiles@2
   inputs:
     SourceFolder: 'c:\temp\temps1'
     Contents: '**'
-    TargetFolder: 'c:\temp\temps2'
+    TargetFolder: 'c:\temps2'
