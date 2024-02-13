@@ -12,6 +12,6 @@ steps:
 - 
 - task: CopyFiles@2
   inputs:
-    SourceFolder: 'c:\temps1'
+    SourceFolder: 'c:\temp\temps1'
     Contents: '**'
-    TargetFolder: 'c:\temps2'
+    TargetFolder: 'c:\temp\temps2'
