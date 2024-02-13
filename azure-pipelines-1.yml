@@ -8,11 +8,14 @@ trigger:
 
 pool: default
 steps:
+
 - task: AzureFileCopy@5
   inputs:
-    SourcePath: 'c:\copytest'
+    SourcePath: '\\51.143.221.4\copytest\'
     azureSubscription: 'Azure subscription 1(9b650b16-d3a2-4e6c-ba40-e19815b48888)'
     Destination: 'AzureBlob'
+    storage: 'copyteststo'
+    ContainerName: '/copytest'
     storage: 'copyteststo'
     ContainerName: 'copytest'
     BlobPrefix: 'copy/'
